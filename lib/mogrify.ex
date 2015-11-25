@@ -112,7 +112,7 @@ defmodule Mogrify do
     image
   end
 
-  defp run(path, option, params \\ nil) do
+  def run(path, option, params \\ nil) do
     args = ~w(-#{option} #{params} #{String.replace(path, " ", "\\ ")})
     System.cmd "mogrify", args, stderr_to_stdout: true
   end
